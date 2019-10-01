@@ -10,7 +10,7 @@ bo_values = [False, True, False, False, True, True, False, False]    #binary out
 bi_values = []                                                      #binary inputs values
 di_values = []                                                      #dry contact inputs values
 ai_values = []                                                      #analog inputs values
-ao_values = [500, 1000]                                             #analog outputs values
+ao_values = [550, 1000]                                             #analog outputs values
 firm = [1,2,3,4]                                                    #firmware version
 separator = "----------------------\n\r"
 
