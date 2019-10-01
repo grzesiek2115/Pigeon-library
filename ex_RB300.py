@@ -6,7 +6,7 @@ import time
 
 out_val = 1
 out_nr = 1
-bo_values = [True, True, False, False, True, True, False, False]    #binary outputs values
+bo_values = [False, True, False, False, True, True, False, False]    #binary outputs values
 bi_values = []                                                      #binary inputs values
 di_values = []                                                      #dry contact inputs values
 ai_values = []                                                      #analog inputs values
