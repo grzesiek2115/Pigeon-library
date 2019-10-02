@@ -1,4 +1,3 @@
-#!/usr/bin/python
 
 import RPi.GPIO as GPIO
 from enum import Enum

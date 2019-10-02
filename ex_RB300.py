@@ -6,7 +6,7 @@ import time
 
 out_val = 1
 out_nr = 1
-bo_values = [False, True, False, False, True, True, False, False]    #binary outputs values
+bo_values = [False, True, False, False, True, True, False, False]   #binary outputs values
 bi_values = []                                                      #binary inputs values
 di_values = []                                                      #dry contact inputs values
 ai_values = []                                                      #analog inputs values
@@ -67,6 +67,6 @@ while True:
 
     time.sleep(2)
     exit("koniec programu")
-#pigeonClose(Model_t.RB300_CM3)
+#pigeonClose(Model.RB300_CM3)
 
 
