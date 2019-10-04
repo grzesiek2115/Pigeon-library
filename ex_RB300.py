@@ -20,13 +20,13 @@ enableOutputs(True)
 turnOffAllBinOutputs()
 
 #initial values of outputs
-writeBinOutputs(bo_values)
+#writeBinOutputs(bo_values)
 #writeAnalogOutputs(ao_values)
 
 while True:
     #read inputs
-    #readBinInputs_insert(bi_values, di_values)
-    readBinInputs_append(bi_values, di_values)
+    readBinInputs_insert(bi_values, di_values)
+    #readBinInputs_append(bi_values, di_values)
     #readAnalogInputs(ai_values)
 
     #print inputs states
@@ -38,13 +38,13 @@ while True:
     print(separator)
     print(separator)
 
-    for (index, i) in enumerate(bi_values):
-        print("IN{} = {}".format(index + 1, bi_values[i]))
+    for i in range(0, len(di_values)):
+        print("IND{} = {}".format(i + 1,di_values[i]))
+
     print(separator)
 
-    for (index, i) in enumerate(di_values):
-        print("IND{} = {}".format(index + 1, di_values[i]))
-    print(separator)
+    for i in range(0, len(bi_values)):
+        print("IN{} = {}".format(i + 1,bi_values[i]))
 
 
     #for (index, i) in enumerate(ai_values):
