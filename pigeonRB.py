@@ -130,24 +130,20 @@ def pigeonClose(model):
         exit("wrong model definition\n")
 
 
-def readOptoInput(input_nr):    #Funkcja działa poprawnie
+def readOptoInput(input_nr):    #Funkcja działa poprawnie - 03.10.2019???? nagle nie działa
     return bool(GPIO.input(digitalinputs_list[input_nr - 1]))
 
 
 def readDryInput(input_nr):     #Funkcja działa poprawnie
     return bool(GPIO.input(digitalDryinputs_list[input_nr - 1]))
 
-def readBinInputs_insert(bi, di):      #DO SPRAWDZENIA czy działa poprawnie
+
+def readBinInputs(bi, di):      #Funkcja działa poprawnie
     for i in range(8):
         bi.insert(i, readOptoInput(i + 1))
     for j in range(4):
         di.insert(j, readDryInput(j + 1))
 
-def readBinInputs_append(bi, di):      #DO SPRAWDZENIA czy działa poprawnie
-    for i in range(8):
-        bi.append(readOptoInput(i + 1))
-    for j in range(4):
-        di.append(readDryInput(j + 1))
 
 def writeBinOutput(output_nr, bool_value):   #Funkcja działa poprawnie
     GPIO.output(digitaloutputs_list[output_nr - 1], bool_value)

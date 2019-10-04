@@ -1,4 +1,4 @@
-#!/usr/bin/python
+
 
 from pigeonRB import *
 import time
@@ -25,8 +25,8 @@ turnOffAllBinOutputs()
 
 while True:
     #read inputs
-    readBinInputs_insert(bi_values, di_values)
-    #readBinInputs_append(bi_values, di_values)
+    readBinInputs(bi_values, di_values)
+
     #readAnalogInputs(ai_values)
 
     #print inputs states
@@ -58,12 +58,6 @@ while True:
     #calculate next values of outputs exit()
 
 
-    '''ao_values[0] += 100 #add 1V
-    if ao_values[0] > 1000:
-        ao_values[0] = 0
-    ao_values[1] += 100  # add 1V
-    if ao_values[1] > 1000:
-        ao_values[1] = 0'''
 
     time.sleep(2)
     exit("koniec programu")
