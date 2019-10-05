@@ -42,6 +42,7 @@ CTRL_5V = 29
 FAULT_5V = 43
 #LAN9514
 LAN_RESET = 6
+
 #Pigeon model type
 class Model(Enum):
     UNKNOWN = 1
