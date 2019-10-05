@@ -18,4 +18,3 @@ while True:
     writeBinOutput(7, out7)
     writeBinOutput(8, out8)
 
-
