@@ -132,7 +132,7 @@ def pigeonClose(model):
 
 
 def readOptoInput(input_nr):    #Funkcja działa poprawnie - 03.10.2019???? nagle nie działa
-    return bool(GPIO.input(digitalinputs_list[input_nr - 1]))
+    return bool(1 - GPIO.input(digitalinputs_list[input_nr - 1]))
 
 
 def readDryInput(input_nr):     #Funkcja działa poprawnie
