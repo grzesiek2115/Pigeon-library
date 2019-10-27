@@ -3,6 +3,11 @@ import math
 import time
 
 def spiClose():
+    spi = spidev.SpiDev()  # create spi object
+    spi.open(0, 1)  # open spi port 0, device (CS) 1
+    spi.mode = 1  # mode bits: CPHA = 1, CPOL = 0,
+    spi.bits_per_word = 8
+    spi.max_speed_hz = 2000000
     spi.close()
 
 
@@ -39,15 +44,13 @@ def spiReadAI():
     x.append((q[4]) | (q[5] << 8))
     x.append((q[6]) | (q[7] << 8))
 
-    a = (x[0] * 10.065) / 1023.0
-    b = (x[1] * 10.065) / 1023.0
-    c = (x[2] * 10.065) / 1023.0
-    d = (x[3] * 10.065) / 1023.0
+    ai_values = []
 
-    print(round(a,2), round(b,2), round(c,2), round(d,2))
+    ai_values.append(round(((x[0] * 10.065) / 1023.0), 2))
+    ai_values.append(round(((x[1] * 10.065) / 1023.0), 2))
+    ai_values.append(round(((x[2] * 10.065) / 1023.0), 2))
+    ai_values.append(round(((x[3] * 10.065) / 1023.0), 2))
 
-#def spiReadRegs():
+    return ai_values
 
-#def spiWriteRegs():
 
-#def spiReadFirmwareVer():
