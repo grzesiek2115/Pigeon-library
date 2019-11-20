@@ -19,5 +19,3 @@ print("IND3 = {}".format(1 - readDryInput(3)))
 print("IND4 = {}".format(1 - readDryInput(4)))
 
 exit()
-
-

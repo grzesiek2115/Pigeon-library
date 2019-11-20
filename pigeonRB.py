@@ -2,10 +2,8 @@ from pigeonSPI import *
 import RPi.GPIO as GPIO
 from enum import Enum
 
-
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
-
 
 # Digital inputs
 IN1 = 12
@@ -17,13 +15,11 @@ IN6 = 21
 IN7 = 22
 IN8 = 23
 
-
 # Dry contact inputs
 IND1 = 30
 IND2 = 31
 IND3 = 32
 IND4 = 33
-
 
 # Digital outputs
 OUTE = 34
@@ -36,26 +32,21 @@ OUT6 = 40
 OUT7 = 41
 OUT8 = 42
 
-
 # LEDs
 LED0 = 47
 LED1 = 45
 
-
 # Watchdog
 WATCHDOG_EN = 5
 WATCHDOG_IN = 44
-
 
 # Power_control
 CTRL_3V3 = 28
 CTRL_5V = 29
 FAULT_5V = 43
 
-
 # LAN9514
 LAN_RESET = 6
-
 
 # Pigeon model type
 class Model(Enum):
@@ -90,7 +81,6 @@ def pigeonSetup(model):
     else:
         exit("ERROR: Wrong Pin Numbering Declaration.")
 
-
     # Digital outputs
     GPIO.setup(OUT1, GPIO.OUT)
     GPIO.setup(OUT2, GPIO.OUT)
@@ -100,8 +90,10 @@ def pigeonSetup(model):
     GPIO.setup(OUT6, GPIO.OUT)
     GPIO.setup(OUT7, GPIO.OUT)
     GPIO.setup(OUT8, GPIO.OUT)
+
     # Enable all outputs
     enableOutputs(True)
+
     # Digital optoisolated inputs
     GPIO.setup(IN1, GPIO.IN)
     GPIO.setup(IN2, GPIO.IN)
@@ -111,20 +103,25 @@ def pigeonSetup(model):
     GPIO.setup(IN6, GPIO.IN)
     GPIO.setup(IN7, GPIO.IN)
     GPIO.setup(IN8, GPIO.IN)
+
     # Dry contact inputs
     GPIO.setup(IND1, GPIO.IN)
     GPIO.setup(IND2, GPIO.IN)
     GPIO.setup(IND3, GPIO.IN)
     GPIO.setup(IND4, GPIO.IN)
+
     # watchdog
     GPIO.setup(WATCHDOG_EN, GPIO.OUT)
     GPIO.setup(WATCHDOG_IN, GPIO.OUT)
+
     # powercontrol
     GPIO.setup(CTRL_3V3, GPIO.OUT)
     GPIO.setup(CTRL_5V, GPIO.OUT)
     GPIO.setup(FAULT_5V, GPIO.OUT)
+
     # LAN9514
     GPIO.setup(LAN_RESET, GPIO.OUT)
+
     # LED
     GPIO.setup(LED0, GPIO.OUT)
     GPIO.setup(LED1, GPIO.OUT)
@@ -136,22 +133,11 @@ def pigeonSetup(model):
     else:
         exit("wrong model definition\n")
 
-def pigeonClose(model):
-    if model == Model.RB100 or model == Model.RB100_CM3:
-        pass
-    elif model == Model.RB300 or model == Model.RB300_CM3:
-        pass
-    else:
-        exit("wrong model definition\n")
-
-
 def readOptoInput(input_nr):
     return bool(1 - GPIO.input(digitalinputs_list[input_nr - 1]))
 
-
 def readDryInput(input_nr):
     return bool(GPIO.input(digitalDryinputs_list[input_nr - 1]))
-
 
 def readBinInputs(bi, di):
     for i in range(8):
@@ -159,10 +145,8 @@ def readBinInputs(bi, di):
     for j in range(4):
         di.insert(j, readDryInput(j + 1))
 
-
 def writeBinOutput(output_nr, bool_value):
     GPIO.output(digitaloutputs_list[output_nr - 1], bool_value)
-
 
 def writeBinOutputs(values):
     for i in range(8):
@@ -172,20 +156,8 @@ def turnOffAllBinOutputs():
     for i in range(8):
         GPIO.output(digitaloutputs_list[i], False)
 
-
 def readAnalogInputs():
     return spiReadAI()
 
-
 def writeAnalogOutputs(values):
     spiWriteAO(values)
-
-
-
-
-
-
-
-
-
-
