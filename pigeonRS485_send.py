@@ -10,8 +10,6 @@ ser = Serial('/dev/ttyRS485', baudrate = 9600,
                     bytesize = EIGHTBITS)
 
 ser.write('I m Pigeon\n\r'.encode('utf-8'))
-# ser.write('1234657890\n\r'.encode('utf-8'))
-# ser.write('1234657890\n\r'.encode('utf-8'))
 print('RS485 communication works correctly')
 
 time.sleep(1)

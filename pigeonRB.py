@@ -127,7 +127,8 @@ def pigeonSetup(model):
     GPIO.setup(LED1, GPIO.OUT)
 
     if model == Model.RB100 or model == Model.RB100_CM3:
-        pass
+        print('Wrong Pigeon model, come back with RB300')
+        exit()
     elif model == Model.RB300 or model == Model.RB300_CM3:
         pass
     else:
