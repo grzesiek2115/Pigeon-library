@@ -1,6 +1,6 @@
 # Pigeon-library
 
-My first project in Python. 
+Python library for Pigeon computers. 
 
 
 https://pigeoncomputers.com/pl/
